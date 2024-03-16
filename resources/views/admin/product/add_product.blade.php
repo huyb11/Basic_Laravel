@@ -12,7 +12,7 @@
        
         <!-- /.card-header -->
         <!-- form start -->
-        <form id="quickForm" action="{{route('admin.product.store')}}" method="post" >
+        <form id="quickForm" action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data" >
             @csrf
           <div class="card-body">
             <div class="form-group">
@@ -28,12 +28,17 @@
                 <input type="text" name="product_amount" class="form-control" id="" placeholder="Enter product amount">
               </div>
               <div class="form-group">
+                <label for="">Product Image</label>
+                <input type="file" name="product_img" class="form-control" id="" >
+              </div>
+              <div class="form-group">
                 <label for="exampleSelectBorder">Danh mục </label>
                 <select name="category_id" class="custom-select form-control-border" id="exampleSelectBorder">
                     @foreach($category as $item)
                               <option value="{{$item->id}}">{{$item->category_name}}</option>
                   @endforeach
                 </select>
+              </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
