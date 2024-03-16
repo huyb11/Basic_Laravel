@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignUpController;
+use App\Http\Controllers\TelegramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +53,6 @@ Route::post('admin/login',[LoginController::class,'login'])->name('admin.login')
 Route::post('admin/logout',[LoginController::class,'LogOut'])->name('admin.logout');
 Route::post('admin/signup',[SignUpController::class,'SignUp'])->name('admin.signup');
 Route::get('admin/signup/page',[SignUpController::class,'SignUpPage'])->name('admin.signup.page');
+//todo Route:tele
+Route::get('update-activity',[TelegramController::class,'updatedActivity']);
 

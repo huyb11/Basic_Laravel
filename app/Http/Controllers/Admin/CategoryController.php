@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Telegram\Bot\Laravel\Facades\Telegram;
 class CategoryController extends Controller
 {
     public function AllCategory()
@@ -24,8 +24,22 @@ class CategoryController extends Controller
     {
         $data = $request->except('_token');
         $data['created_at'] = new \DateTime();
+
+
+        $text = "A New Messenger \n"
+            . "<b>Category Name </b>\n"
+            . "$request->category_name\n";
+
+        Telegram::sendMessage([
+            'chat_id' => env('TELEGRAM_CHANNEL_ID', '-1002072481157'),
+            'parse_mode' => 'HTML',
+            'text' => $text
+        ]);
+
+
+
         DB::table('categories')->insert($data);
-        
+
         return redirect()->route('admin.category.all')->with('success', 'Nhap thanh cong');
     }
     public function EditCategory($id)
@@ -39,19 +53,18 @@ class CategoryController extends Controller
         $data = $request->except('_token');
         $data['updated_at'] = new \DateTime();
         DB::table('categories')
-        ->where('id', $id)
-        ->update($data);
+            ->where('id', $id)
+            ->update($data);
         return redirect()->route('admin.category.all')->with('success', 'Update thanh cong');
 
     }
     public function DeleteCategory($id)
     {
         DB::table('categories')
-        ->where('id', $id)
-        ->delete();
-        
+            ->where('id', $id)
+            ->delete();
+
         return redirect()->route('admin.category.all')->with('success', 'Delete thanh cong');
     }
 }
 
-    

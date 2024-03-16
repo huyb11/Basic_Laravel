@@ -23,9 +23,9 @@
                     <tbody>
                         @foreach ($user as $item)
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->user_name}}</td>
-                            <td>{{$user->user_email}}</td>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->email}}</td>
                             
                             <td colspan="2">
 
