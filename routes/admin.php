@@ -50,7 +50,7 @@ Route::middleware('check_login')->group(function () {
             Route::get('/all', 'AllUser')->name('all');
             Route::get('/edit/{id}', 'AllUser')->name('edit');
             Route::post('/update/{id}', 'UpdateUser')->name('update');
-            Route::post('/delete/{id}', 'DeleteUser')->name('delete');
+            Route::get('/delete/{id}', 'DeleteUser')->name('delete');
         });
 
         //todo ROute:room

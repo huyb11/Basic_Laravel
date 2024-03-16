@@ -17,8 +17,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Room Name</th>
-                                <th>Count</th>
                                 <th>Price</th>
+                                <th>Count</th>
+                                <th>Room Category</th>
                                 <th>Room Image</th>
                                 <th>Action</th>
                         </thead>
@@ -28,12 +29,11 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->room_name }}</td>
                                     <td>{{ $item->price }}</td>
-                                    <td>{{ $item->amount }}</td>
-                                    <td>{{ $item->room_category }}</td>
+                                    <td>{{ $item->count }}</td>
+                                    <td>{{ $item->roomCategory->room_category_name }}</td>
                                     <td>
-                                        <img src="{{ asset($item->img) }}" width="90px" height="90px" />
+                                        <img src="{{ asset($item->image) }}" alt="Room Image" width="90px" height="90px">
                                     </td>
-                                    <td>{{ $item->status }}</td>
 
 
                                     <td colspan="2">

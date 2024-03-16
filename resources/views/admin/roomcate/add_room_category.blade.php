@@ -10,7 +10,7 @@
        
         <!-- /.card-header -->
         <!-- form start -->
-        <form id="quickForm" action="{{route('admin.category.store')}}" method="post" >
+        <form id="quickForm" action="{{route('admin.room_category.store')}}" method="post" >
             @csrf
           <div class="card-body">
             <div class="form-group">

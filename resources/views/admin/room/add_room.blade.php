@@ -16,17 +16,17 @@
                         <div class="form-group">
                             <label for="">Room Name</label>
                             <input type="text" name="room_name" class="form-control" id=""
-                                placeholder="Enter category name">
+                                placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="">Room Count</label>
                             <input type="text" name="count" class="form-control" id=""
-                                placeholder="Enter category name">
+                                placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="">Room Price</label>
                             <input type="text" name="price" class="form-control" id=""
-                                placeholder="Enter category name">
+                                placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="">Room Image</label>
@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <label for="exampleSelectBorder">Room Category </label>
                             <select name="room_category_id" class="custom-select form-control-border" id="exampleSelectBorder">
-                                @foreach ($room_category as $item)
+                                @foreach ($roomCategory as $item)
                                     <option value="{{ $item->id }}">{{ $item->room_category_name }}</option>
                                 @endforeach
                             </select>

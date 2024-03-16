@@ -20,7 +20,7 @@
                                 <th>Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $item)
+                            @foreach ($roomCategory as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->room_category_name}}</td>

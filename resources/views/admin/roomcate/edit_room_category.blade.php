@@ -10,12 +10,12 @@
        
         <!-- /.card-header -->
         <!-- form start -->
-        <form id="quickForm" action="{{route('admin.room_category.update',$room_category->id)}}" method="post" >
+        <form id="quickForm" action="{{route('admin.room_category.update',$roomCategory->id)}}" method="post" >
             @csrf
           <div class="card-body">
             <div class="form-group">
               <label for="">Category Name</label>
-              <input type="text" name="room_category_name" class="form-control" value="{{$room_category->room_category_name}}" id="" placeholder="Enter category name">
+              <input type="text" name="room_category_name" class="form-control" value="{{$roomCategory->room_category_name}}" id="" placeholder="Enter category name">
             </div>
             
             

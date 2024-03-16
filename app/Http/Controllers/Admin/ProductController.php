@@ -52,6 +52,13 @@ class ProductController extends Controller
     {
         $data = $request->except('_token');
         $data['created_at'] = new \DateTime();
+
+        if ($request->hasFile('product_img')) {
+            $image = $request->file('product_img');
+            $file_name = time() . '-' . $image->getClientOriginalName();
+            $image ->move(public_path('product'), $file_name);
+            $data['product_img'] = 'product/' . $file_name;
+        }
         DB::table('products')
             ->where('id', $id)
             ->update($data);
